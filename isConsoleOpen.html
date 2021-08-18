@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Are the devtools open?</h1>
+    <center id="output" style="font-size: 50px;">
+      No.
+    </center>
+    <footer>
+      <a href="#" onclick="this.innerHTML = 'Basically, we create a regex, set its toString function, and constantly console.log the regex. If the console is opened, it'll call the toString function.';">How does this work?</a>
+      <a href="https://github.com/BalaM314/isDevtoolsOpen/">Source Code</a>
+    </footer>
+    <script type="text/javascript">
+      var openedDevTools = false;
+      let timesRan = 0;
+      function onConsoleOpen(){
+        if(openedDevTools) return;
+        openedDevTools = true;
+        document.getElementById("output").innerHTML = "Yes!";
+        alert("DevTools opened!");
+        clearInterval(cancel);
+        console.clear();//necessary due to potential lag if page was open long enough
+      }
+
+      let x = /lol/;
+      x.toString = () => {onConsoleOpen(); return "/lol/";}
+      var cancel = setInterval(() => {
+        console.dir({e: x});
+      }, 10);
+    </script>
+  </body>
+</html>
