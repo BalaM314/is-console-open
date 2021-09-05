@@ -11,7 +11,8 @@
     </center>
     <footer>
       <button onclick="document.getElementById('output').innerHTML = 'Basically, we create a regex, set its toString function, and constantly console.dir an object containing the regex. If the console is opened, it'll call the toString function.';">How does this work?</button>
-      <a href="https://github.com/BalaM314/isDevtoolsOpen/">Source Code</a>
+      <a href="https://github.com/BalaM314/is-console-open/">Source Code</a><br>
+      Note: this no longer works on the latest versions of Chrome as the behavior of console.dir was changed. I'm looking for a workaround.
     </footer>
     <script type="text/javascript">
       var openedDevTools = false;
@@ -29,7 +30,7 @@
       x.toString = () => {onConsoleOpen(); return "balam314 is awesome";}
       var cancel = setInterval(() => {
         console.dir({e: x});
-      }, 10);
+      }, 100);
     </script>
   </body>
 </html>
