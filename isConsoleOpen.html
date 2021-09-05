@@ -10,27 +10,33 @@
       No.
     </center>
     <footer>
-      <button onclick="document.getElementById('output').innerHTML = 'Basically, we create a regex, set its toString function, and constantly console.dir an object containing the regex. If the console is opened, it'll call the toString function.';">How does this work?</button>
+      <button onclick="document.getElementById('output').innerHTML = `Basically, we create an Error object, use Object.defineProperty to set the message property to a getter, then console.log('random string', err). The error being the second argument confuses chrome into calling it once on page load, then again when the devtools are opened.`;">How does this work?</button>
       <a href="https://github.com/BalaM314/is-console-open/">Source Code</a><br>
-      Note: this no longer works on the latest versions of Chrome as the behavior of console.dir was changed. I'm looking for a workaround.
     </footer>
     <script type="text/javascript">
-      var openedDevTools = false;
+      let timesAccessed = window.clientInformation.userAgentData ? 0 : 1;
+      const charstring = "ᙫྣᩭፄ৕Άᚬ᎖ᒵ᫅سୃཨ௼϶ԠḲ೬໡፰ᄉ6ரἐ5ᩴღ܊ᄍcἧဖ᧻ᇾଁषፗᏢፃؚ೶ಅ๎Ԑ7ᘚࣔگᦖဵࣞؽু0ࠕé࿷ᩥƟᬵˎύᣧϥঽϡἭӔὦեୁᨗᾞథ༗ᵘéؔᬙٿ᝘ᙤf௅ࡻ൶ࡤӍẟਸ਼ᳰឆĶ̐4ปᬐʬਊĐ8ਬᨏຸߓᗾ᤽ᛒഡ0໗᧞ᄀaᐮՄᔢ౏ᓰූ޹Ԑ2̐dỎୌ᪸১೭ġ໠ዚኵ᩽ሑ᫑ᚧڎ׍៭᯼Μᒺυߩy᠋ᤌ᧼Ŷᓓᒦᶽཤအ0ാẛǧ჆᧡ᜭᜐaᴓ൩ࡏ\x110༗᧲᳝᪤ƭിზᙏᖄ֚ᩙᒺ᫞ѯź࿓റطણ୲ṁӶᣮ௔ỹ᧔ྠ๫ᝡफතǮὑ0ᄍc૭ᆕᅟጮࡔקဋᔵࢌౘā07ٟᶊͲ᩼ͣᥥಖᷫዾᗇୋઇনᄈ4ႃ৺ὶȕྔ಻ᡒ᚝ᴫ\x95ᜐaʗᱴḒᄋeᔦऺᙵଙቓhᐿᄁ3Ꮄ്῏ऌᇡᵮįᮡὯڡڦොۊԿᵎᨠᗱ0Ծ੆ཽ᝖ᓸᳶࡹᡆৃ̤ὅᾗ᪡Ɖ༨ᙷପ਽ÂᝩߓĊaᙽᐼޣҳᓥݪ׊ᬾᣜᥐᨷፑ0״ວᆟ௻ණᠢᎄ᥽ᮔĤᡡ٨൅஧ۨẢሡᅹ᫏իẟހ῞ਖ១0ྡẗҴ᪦ᯔỈ᪕᜛סᄌ6˯࢏żޘňŢᯃ៤ࢴᒃᓛĥਛᤂ᭎෕دᓳሐ8ག႕ϸᴄ٣čfᨕࡱᒕᚸګ᫗֑ឿుᄁfܧ౺ཌྷࡑ0दᬏֵ॥ᬨḉ៣ԐcНˌఐbᒑɲ᭶ຉ࿩Ϯణಎủ֐˲Ž᧑0ᆒĜᶍ᩺ᶥᘐ5ᕍଈᕤ᭘ኢᢵṛ˲ᧆᗼᗷᲁ᥷ā09ᓆ᪢᠐cࣉᖁᱡᦁདħȚ඀ᕏ௶ᝫËᏊ˙Ῥᐾъ਱ᗜ᪺፩஧Лዄܪཬ૯ᄆ2Ѕ౗๪౷ᚁᱤᒚč0ܢᦃᬶ᧙ᡬ໢᧳ඎᲐὙՏዱ0ᄊ5ගᰬ४҅ୱ0ᰁ0ᡲᑚᘐaPᠢቨᗨᓊඑͧኃᚵᙔᩇᩜȞᝌůւᐥ෸ᮣᤸৄۻᓊཱ٦ኺ፹ଣૡᛣ᷁Аf،๒࿱ุೄᵀᵹ๋ᛆઝឝអᳪᯀ᳅ᑷႜᓻࢨ८ᣜؓਣࢶ൷ӕᑈâᙁ۔൓᳚᧴పߘăfᘦ῔ᙵ˯ଐ7՚ܳǑ0᥂ᑭจẟ؀ṁ௾՟຦፰ೀԐ10ܮ෇኎ᇭ্ֽᄍ3ጚቒ᰾გᳯϔÑɓ᭞ഃݚᾴφᐘ᪢МᚩᏠ͖ሿᨄ͓ᵅߓ׌ᜈ᫝ྍ۹̷ቘ࿄Ἅᶓ঴٢ᣍᆔ༅ऐ8ดካᾪᓢᚙ᫥ψᓵἴᲷ౒ଵቚݔᳫḤռڂᠱ᡾ᤐ9ಁ0๺տݏᥴѲŵņẊઍᦰ׃᩻፾ᄘ᳑0ǰᠡᘐ10ূᑧᵏᛨഐ4᰽ƤỠ᎚ڤܲඪ቎រࠝᴽ᳴᦯ᮨआᦱٌᓯ࿷ᴐ8ᴤ˻᭳όᲗ়ᦎᎠᰰ೵೹ະ˝ং᧫௱ķᠱ0ᚦʢᥙᦛຟ᪼࠲ᓬѱᛡ\x1B᫞ᗏᙶᱳᶳ৭ĜӰᙣਿḸමᅙىؐfܿᶴ෫న᳅ᒸዲࢭ௱ចЌᅳᬙύᖑ0᪻টࢇౝᡴ͗ᡬڥ౶᳔࣫יᩖ൒แ༥ᏌᬾẊোẃኼೱወẲ᡼တ6Ừਂ࣌໹ࠐ0దኮ᧚༐ᴤᴒᠷਔ᱕ᄊ0ੇኵ୨ᒏूأᩁĦ᮪ͱڷᓚ᪸ӷҲ᪼љŲࡇജ࢘᧞Ꮯж᝴᭧ा୴ᶻ᫄ݚἋ᭩ࢽ໭ᨐc࠵ᣒ঒ᢂকᕴἥᇸᰏᄆeᗵՑჽᩍᵾܢᵤූ᳤ۏ࠮Ჽ᭰၆ദ᱖আᨑˊඎᧈɄវቌᑺᯧᵛஹᚶḯ։ཤ᤬͡0ᕽẫػ̖ᩱࡧЗภলᨑ0ᜉཊᶃ$ߑሧֆʨ᫠Ṳ౫ڋᚨʥыᆣፒړބʨᾚᓵ᮸ɸᦉ֏ᦊ঺ᙊțᘸᨐ7௶౬ܩ̭चஅَቐࣀǸ᯳ଭᱱुޭᙣᯁ0ʾᮋڡ๎౪ᣆ෿ṏ˸ᘥᓋጊᾉᄎe៨ᙙඏལɧᏳᬻњᎹឲᷢӿᲅວᲄçרധᏴආ΋ʱر0༕ঘཫ˄൙፶ओᇸೈ¡ᛶɳĈ9ኳᘌ෮ਐ5ű0Ȭ᳟఍කဒᶉฐcᛩॳଽū཯ḻᣥཻם᪭ệౄ᳍ἐ9ᯄࢯć5໕ீǆ༫᢭ឯ̻஦ହಈ᭏੻";
+      //very janky if firefox then 1 else if chrome then 0
+      //because chrome calls the getter once on page load, and then again when console opened
       let timesRan = 0;
       function onConsoleOpen(){
-        if(openedDevTools) return;
-        openedDevTools = true;
         document.getElementById("output").innerHTML = "Yes!";
         alert("DevTools opened!");
-        clearInterval(cancel);
-        console.clear();//necessary due to potential lag if page was open long enough
       }
-
-      let x = /leet/;
-      x.toString = () => {onConsoleOpen(); return "balam314 is awesome";}
-      var cancel = setInterval(() => {
-        console.dir({e: x});
-      }, 100);
+      let err = new Error();
+			Object.defineProperty(
+				err,
+				"message",
+				{
+					get: function(){
+						timesAccessed ++;
+						if(timesAccessed > 1){
+							onConsoleOpen();
+						}
+					}
+				}
+			);
+      console.log(charstring, charstring, err);
     </script>
   </body>
 </html>
