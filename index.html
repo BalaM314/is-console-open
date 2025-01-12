@@ -11,7 +11,7 @@
 		</center>
 		<p id="explanation" style="font-size: large;"></p>
 		<footer>
-			<button onclick="document.getElementById('explanation').innerHTML = `Basically, we create an Error object, use Object.defineProperty to set the message property to a getter, then console.log it.<br/>Firefox calls bodged-in getters like this one once when the text they're meant to return is displayed. When the console is opened, it needs to display the error's message, and calls our code.<br/>Chrome, however, calls getters once on page load even if you didn't open the console (possibly in an attempt to stop this), however it calls the getter again once the console is actually opened, so we can just only run the payload the second time.`;">How does this work?</button>
+			<button onclick="document.getElementById('explanation').innerHTML = `Create an Error object, set the error's 'message' property to a getter, then console.log the object.<br/>Firefox invokes this get like this one once when the text they're meant to return is displayed. When the console is opened, it needs to display the error's message, and calls our code.<br/>Chrome, however, calls getters once on page load even if you didn't open the console (possibly in an attempt to stop this), however it calls the getter again once the console is actually opened. The payload should wait for the second time.`;">How does this work?</button>
 			<a href="https://github.com/BalaM314/is-console-open/">Source Code</a><br>
 		</footer>
 		<script type="text/javascript">
